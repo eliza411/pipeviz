@@ -14,7 +14,7 @@
 FROM debian:latest
 MAINTAINER Melissa Anderson <melissa@happypunch.com>
 
-ENV GO_VERSION 1.4.2
+ENV GO_VERSION 1.5
 ENV GOPATH /opt/go
 ENV PATH /usr/local/go/bin:$GOPATH/bin:$PATH
 
