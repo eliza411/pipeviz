@@ -14,7 +14,7 @@
 FROM fedora:latest
 MAINTAINER Melissa Anderson <melissa@happypunch.com>
 
-ENV GO_VERSION 1.4.2
+ENV GO_VERSION 1.5
 ENV GOPATH /opt/go
 ENV PATH /usr/local/go/bin:$GOPATH/bin:$PATH
 
@@ -26,14 +26,14 @@ RUN dnf install -y \
     nodejs \
     npm \
     tar
-RUN wget https://storage.googleapis.com/golang/go1.4.2.linux-amd64.tar.gz
-RUN tar -C /usr/local -xzf go1.4.2.linux-amd64.tar.gz
+RUN wget https://storage.googleapis.com/golang/go$GO_VERSION.linux-amd64.tar.gz
+RUN tar -C /usr/local -xzf go$GO_VERSION.linux-amd64.tar.gz
 RUN useradd pipeviz
-RUN mkdir -p $GOPATH/src/github.com/tag1consulting/pipeviz
-COPY . $GOPATH/src/github.com/tag1consulting/pipeviz
+RUN mkdir -p $GOPATH/src/github.com/pipeviz/pipeviz
+COPY . $GOPATH/src/github.com/pipeviz/pipeviz
 RUN chown -R pipeviz $GOPATH
 USER pipeviz
-WORKDIR $GOPATH/src/github.com/tag1consulting/pipeviz
+WORKDIR $GOPATH/src/github.com/pipeviz/pipeviz
 RUN make && \
     make install
 CMD ["pipeviz", "-b"]
