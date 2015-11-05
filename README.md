@@ -53,9 +53,6 @@ Each of the (Go-based) message producers is located in a subdirectory under `cli
 
 ### Docker
 
-We maintain both a Debian and a Fedora Dockerfile. Unless you're working on a platform-specific message producer, there's no compelling reason to choose one over another.
+We maintain both a Debian and a Fedora Docker image on [Docker Hub](https://hub.docker.com/r/pipeviz/pipeviz). Unless you're working on a platform-specific message producer, there's no compelling reason to choose one over another.
 
 To set up Docker, see the [Get Started](https://docs.docker.com/mac/started/) link on https://docs.docker.com. Be sure to choose the directions for your operating system.
-
-Each Pipeviz Dockerfile contains the commands you need in the comments at the top of the file.
-
